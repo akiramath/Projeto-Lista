@@ -3,27 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Lista</title>
+
+    <!--CSS do projeto-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--JS do projeto-->
+    <script src="js/script.js" defer></script>
+    <!--Icons do projeto-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+
+    <title>Minhas Tarefas</title>
 </head>
 <body id="fundo">
-    <main>
-        <section>
-            <form id="form">
-                <img src="img/icon-mercado.png" id="icon">
-                <h1 id="titulo">Lista de Mercadorias</h1>
-                <button class="opcoes" onclick="mercado()">Super Mercado</button>
-                <button class="opcoes" onclick="farmacia()">Farmacia</button>
-                <button class="opcoes" onclick="petshop()">Pet shop</button>
-
-                <div class="i-b"><input type="text" id="dados" class="dados" required> <button id="adc">Adicionar</button></div>
-                <p class="obs">Obs: Quando concluir um item, clique em cima do nome para marcar como finalizado.</p>
-            </form>
-            <div id="itens">
-                <ol></ol>
+    <div class="conteiner">
+        <header>
+            <h1>Tarefas:</h1>
+        </header>
+        <form id="form">
+            <p>Adicione a sua tarefa: </p>
+            <div class="form-control">
+                <input type="text" id="input-tarefa" placeholder="O que irá fazer hoje?"><button type="submit"><span class="material-symbols-outlined">add</span></button>
             </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+        </form>
+        <form id="edit-form" class="hide">
+            <p>Edite a sua tarefa:</p>
+            <div class="form-control">
+                <input type="text" id="edit-input"><button type="submit"><span class="material-symbols-outlined">done_all</span></button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </form>
+        <div id="toolbar">
+            <div id="search">
+                <h4>Pesquisar: </h4>
+                <form>
+                    <input type="text" id="search-input" placeholder="Buscar">
+                    <button id="erase-button"><span class="material-symbols-outlined">backspace</span></button>
+                </form>
+            </div>
+            <div id="filter">
+                <h4>Filtrar:</h4>
+                <select id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="done">Feitos</option>
+                    <option value="todo">A fazer</option>
+                </select>
+            </div>
+        </div>
+        <div id="todo-list">
+           <!-- <div class="todo done">
+                <h3>oi..</h3>
+                <button class="finish-todo"><span class="material-symbols-outlined">check</span></button>
+                <button class="edit-todo"><span class="material-symbols-outlined">edit</span></button>
+                <button class="remove-todo"><span class="material-symbols-outlined">delete</span></button>
+            </div> -->
+        </div>
+    </div>
 </body>
 </html>
